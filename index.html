@@ -5,417 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Olipop Six Pack Challenge</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;600;700;800&display=swap');
-
-    :root {
-      --cream: #fff8ec;
-      --mint: #d8f4e6;
-      --mint-dark: #0b4a3f;
-      --orange: #ff6b3d;
-      --pink: #ffe7f0;
-      --grape: #8e4fd1;
-      --lime: #84c341;
-      --card: #ffffff;
-      --ink: #113d36;
-      --muted: #5f746f;
-      --line: #eadfce;
-      --shadow: 0 18px 45px rgba(34, 74, 62, 0.12);
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: 'Inter', Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, var(--cream), #fffdf8 48%, #eef8ef);
-      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f1115;
+      color: #f5f5f5;
       line-height: 1.6;
     }
 
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 9px;
-      background: linear-gradient(90deg, #ff7a4f, #ffc857, #a8df65, #72d6c9, #b983ff);
-      z-index: 20;
-    }
-
-    .top-nav {
-      width: min(1180px, 92%);
-      margin: 0 auto;
-      padding: 1.4rem 0 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .brand-mark {
-      font-family: 'Fredoka', sans-serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      letter-spacing: 0.08rem;
-      color: var(--mint-dark);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      color: var(--ink);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 0.9rem;
-      padding: 0.55rem 0.85rem;
-      border-radius: 999px;
-    }
-
-    .nav-links a:hover {
-      background: var(--mint);
-    }
-
     header {
-      min-height: 68vh;
+      min-height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2.5rem 1.2rem 3.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      width: 560px;
-      height: 560px;
-      right: -120px;
-      top: 30px;
-      background: radial-gradient(circle, rgba(120, 206, 154, 0.35), rgba(120, 206, 154, 0));
-      border-radius: 999px;
-    }
-
-    header::after {
-      content: '';
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      left: -110px;
-      bottom: -70px;
-      background: radial-gradient(circle, rgba(255, 107, 61, 0.22), rgba(255, 107, 61, 0));
-      border-radius: 999px;
+      text-align: center;
+      padding: 3rem 1.2rem;
+      background: radial-gradient(circle at top, #263826, #0f1115 65%);
     }
 
     .hero {
-      width: min(1180px, 100%);
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: center;
-      gap: 2.5rem;
-      position: relative;
-      z-index: 1;
+      max-width: 850px;
     }
 
     .eyebrow {
-      color: var(--orange);
+      color: #b6ff8a;
       text-transform: uppercase;
-      letter-spacing: 0.12rem;
-      font-size: 0.82rem;
-      font-weight: 900;
-      margin-bottom: 0.9rem;
-    }
-
-    h1, .section-title, .stat-card strong, .post-card h3 {
-      font-family: 'Fredoka', sans-serif;
+      letter-spacing: 0.18rem;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
     }
 
     h1 {
-      font-size: clamp(3rem, 7vw, 6rem);
-      line-height: 0.92;
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      line-height: 0.95;
       margin-bottom: 1.2rem;
-      color: var(--mint-dark);
-      max-width: 700px;
-    }
-
-    .underline-pop {
-      display: inline-block;
-      position: relative;
-    }
-
-    .underline-pop::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0.05em;
-      width: 100%;
-      height: 9px;
-      background: var(--orange);
-      border-radius: 999px;
-      z-index: -1;
-      opacity: 0.8;
     }
 
     .subtitle {
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 620px;
-      margin: 0 0 2rem;
+      color: #c9c9c9;
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto 2rem;
     }
 
     .hero-buttons {
       display: flex;
+      justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
-      align-items: center;
     }
 
     .btn {
       text-decoration: none;
-      padding: 0.95rem 1.25rem;
+      padding: 0.9rem 1.3rem;
       border-radius: 999px;
-      font-weight: 900;
-      border: 2px solid var(--mint-dark);
-      color: white;
-      background: var(--mint-dark);
-      box-shadow: 0 10px 0 rgba(11, 74, 63, 0.12);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn:hover, button:hover {
-      transform: translateY(-2px);
+      font-weight: 700;
+      border: 1px solid #b6ff8a;
+      color: #0f1115;
+      background: #b6ff8a;
     }
 
     .btn.secondary {
-      background: white;
-      color: var(--mint-dark);
+      background: transparent;
+      color: #b6ff8a;
     }
-
-    .hero-art {
-      background: linear-gradient(145deg, #e1f6e9, #fff2df);
-      border: 2px solid rgba(11, 74, 63, 0.08);
-      border-radius: 38px;
-      min-height: 380px;
-      box-shadow: var(--shadow);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .hero-art::before {
-      content: '';
-      position: absolute;
-      width: 340px;
-      height: 340px;
-      background: rgba(255, 255, 255, 0.55);
-      border-radius: 999px;
-      right: -50px;
-      top: 35px;
-    }
-
-    .can-row {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 0.85rem;
-      position: relative;
-      z-index: 1;
-      transform: rotate(-2deg);
-    }
-
-    .can {
-      width: 86px;
-      height: 210px;
-      border-radius: 28px 28px 20px 20px;
-      background: #f8dce7;
-      border: 3px solid rgba(17, 61, 54, 0.12);
-      box-shadow: 0 16px 30px rgba(17, 61, 54, 0.14);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Fredoka', sans-serif;
-      font-weight: 800;
-      color: var(--mint-dark);
-      text-align: center;
-      padding: 0.8rem;
-    }
-
-    .can::before {
-      content: '';
-      position: absolute;
-      top: -7px;
-      width: 74%;
-      height: 13px;
-      border-radius: 999px;
-      background: #c8d2cf;
-      border: 2px solid rgba(17, 61, 54, 0.16);
-    }
-
-    .can:nth-child(2) {
-      background: #ffd3bd;
-      height: 228px;
-      color: #d74c28;
-    }
-
-    .can:nth-child(3) {
-      background: #d9c4ff;
-      color: #7040b4;
-    }
-
-    .can:nth-child(4) {
-      background: #dff5bd;
-      color: #357a36;
-      height: 220px;
-    }
-
-    .sparkle {
-      position: absolute;
-      font-size: 2rem;
-      color: var(--orange);
-      z-index: 2;
-    }
-
-    .sparkle.one { top: 38px; left: 55px; }
-    .sparkle.two { bottom: 38px; right: 60px; color: var(--grape); }
 
     main {
-      width: min(1180px, 92%);
+      width: min(1100px, 92%);
       margin: 0 auto;
-      padding: 1.5rem 0 3rem;
+      padding: 3rem 0;
     }
 
     section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
 
     .section-title {
-      font-size: 2.25rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
-      color: var(--mint-dark);
     }
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
     }
 
     .stat-card, .post-card, .rules-card, .form-card {
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 1.25rem;
-      box-shadow: var(--shadow);
-    }
-
-    .stat-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::after {
-      content: '';
-      position: absolute;
-      right: -26px;
-      top: -26px;
-      width: 86px;
-      height: 86px;
-      border-radius: 999px;
-      background: var(--mint);
-      opacity: 0.9;
+      background: #171a21;
+      border: 1px solid #2b303b;
+      border-radius: 22px;
+      padding: 1.2rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
     }
 
     .stat-card span {
       display: block;
-      color: var(--muted);
+      color: #9fa6b2;
       font-size: 0.85rem;
-      font-weight: 800;
       margin-bottom: 0.3rem;
-      position: relative;
-      z-index: 1;
     }
 
     .stat-card strong {
-      font-size: 2rem;
-      color: var(--orange);
-      position: relative;
-      z-index: 1;
-    }
-
-    .rules-card {
-      background: linear-gradient(135deg, #fff, #f7fff8);
+      font-size: 1.8rem;
     }
 
     .rules-card ul {
       padding-left: 1.2rem;
-      color: var(--muted);
-      font-weight: 650;
+      color: #d6d6d6;
     }
 
     .rules-card li {
       margin-bottom: 0.5rem;
     }
 
-    .form-card {
-      background: #ffffff;
-    }
-
     .form-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
       margin-bottom: 1rem;
     }
 
     label {
       display: block;
-      color: var(--ink);
+      color: #c9c9c9;
       font-size: 0.9rem;
-      font-weight: 900;
       margin-bottom: 0.35rem;
     }
 
     input, textarea, select {
       width: 100%;
-      padding: 0.95rem;
-      border-radius: 18px;
-      border: 2px solid #eadfce;
-      background: #fffaf1;
-      color: var(--ink);
+      padding: 0.85rem;
+      border-radius: 14px;
+      border: 1px solid #343946;
+      background: #101218;
+      color: #f5f5f5;
       font: inherit;
-      outline: none;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 4px rgba(255, 107, 61, 0.12);
-    }
-
-    input[type='file'] {
-      background: linear-gradient(135deg, #fffaf1, #effbf1);
-      border-style: dashed;
-      cursor: pointer;
     }
 
     textarea {
-      min-height: 170px;
+      min-height: 150px;
       resize: vertical;
     }
 
@@ -429,17 +163,15 @@
     button {
       border: none;
       cursor: pointer;
-      padding: 0.95rem 1.2rem;
+      padding: 0.85rem 1.1rem;
       border-radius: 999px;
-      background: var(--mint-dark);
-      color: white;
-      font-weight: 900;
-      box-shadow: 0 10px 0 rgba(11, 74, 63, 0.12);
-      transition: transform 0.15s ease;
+      background: #b6ff8a;
+      color: #0f1115;
+      font-weight: 800;
     }
 
     button.danger {
-      background: var(--orange);
+      background: #ff6b6b;
       color: white;
     }
 
@@ -448,26 +180,13 @@
       gap: 1rem;
     }
 
-    .post-card {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 1.25rem;
-      align-items: start;
-    }
-
-    .post-content-only {
-      grid-column: 1 / -1;
-    }
-
     .post-card h3 {
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       margin-bottom: 0.25rem;
-      color: var(--mint-dark);
     }
 
     .post-meta {
-      color: var(--orange);
-      font-weight: 900;
+      color: #9fa6b2;
       font-size: 0.9rem;
       margin-bottom: 0.8rem;
     }
@@ -480,181 +199,61 @@
     }
 
     .tag {
-      font-size: 0.82rem;
-      color: var(--mint-dark);
-      border: 1px solid #bddfca;
-      background: #edf9ef;
+      font-size: 0.8rem;
+      color: #b6ff8a;
+      border: 1px solid #365c28;
+      background: #162013;
       border-radius: 999px;
-      padding: 0.35rem 0.7rem;
-      font-weight: 900;
+      padding: 0.3rem 0.65rem;
     }
 
     .entry-photo {
       width: 100%;
-      height: 170px;
+      max-height: 520px;
       object-fit: cover;
-      border-radius: 22px;
-      border: 2px solid #eadfce;
-      box-shadow: 0 12px 24px rgba(17, 61, 54, 0.1);
-    }
-
-    .bottom-banner {
-      margin-top: 3rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      background: linear-gradient(90deg, #e7f6df, #fff4e5, #ffeaf3);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .bottom-banner div {
-      padding: 1.35rem;
-      border-right: 1px solid rgba(17, 61, 54, 0.08);
-    }
-
-    .bottom-banner div:last-child {
-      border-right: none;
-    }
-
-    .bottom-banner strong {
-      display: block;
-      font-family: 'Fredoka', sans-serif;
-      color: var(--mint-dark);
-      font-size: 1.25rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .bottom-banner p {
-      color: var(--muted);
-      font-weight: 650;
+      border-radius: 18px;
+      border: 1px solid #2b303b;
+      margin-bottom: 1rem;
     }
 
     footer {
       text-align: center;
-      color: var(--muted);
+      color: #808793;
       padding: 2rem 1rem 3rem;
-      font-weight: 800;
     }
 
-    @media (max-width: 850px) {
-      .top-nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-art {
-        min-height: 300px;
-      }
-
-      .can {
-        width: 66px;
-        height: 165px;
-        font-size: 0.85rem;
-      }
-
-      .can:nth-child(2) {
-        height: 178px;
-      }
-
-      .can:nth-child(4) {
-        height: 172px;
-      }
-
-      .post-card {
-        grid-template-columns: 1fr;
-      }
-
-      .entry-photo {
-        height: 260px;
-      }
-
-      .bottom-banner {
-        grid-template-columns: 1fr;
-      }
-
-      .bottom-banner div {
-        border-right: none;
-        border-bottom: 1px solid rgba(17, 61, 54, 0.08);
-      }
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       header {
-        padding-top: 1.5rem;
-      }
-
-      .nav-links {
-        display: none;
+        min-height: 60vh;
       }
 
       .hero-buttons {
         flex-direction: column;
       }
 
-      .btn, button {
+      .btn {
         width: 100%;
-        text-align: center;
-      }
-
-      .can-row {
-        gap: 0.35rem;
-      }
-
-      .can {
-        width: 58px;
-        height: 148px;
-        border-radius: 21px 21px 16px 16px;
-        font-size: 0.75rem;
       }
     }
   </style>
 </head>
 <body>
-  <nav class="top-nav">
-    <div class="brand-mark">POPLOG</div>
-    <div class="nav-links">
-      <a href="#new-entry">New Entry</a>
-      <a href="#entries">Journal</a>
-      <a href="#rules">Rules</a>
-      <a href="#dashboard">Dashboard</a>
-    </div>
-  </nav>
-
   <header>
     <div class="hero">
-      <div>
-        <p class="eyebrow">The Olipop Six Pack Challenge</p>
-        <h1>Better Habits. <span class="underline-pop">Stronger Me.</span></h1>
-        <p class="subtitle">
-          Replacing regular soda with Olipop while documenting the journey toward a visible six pack. One honest entry, one photo, and one disciplined choice at a time.
-        </p>
-        <div class="hero-buttons">
-          <a href="#new-entry" class="btn">Write Today’s Entry</a>
-          <a href="#entries" class="btn secondary">Read The Log</a>
-        </div>
-      </div>
-
-      <div class="hero-art" aria-label="Playful soda can illustration">
-        <span class="sparkle one">✦</span>
-        <span class="sparkle two">✧</span>
-        <div class="can-row">
-          <div class="can">Classic<br>Grape</div>
-          <div class="can">Vintage<br>Cola</div>
-          <div class="can">Cream<br>Soda</div>
-          <div class="can">Lemon<br>Lime</div>
-        </div>
+      <p class="eyebrow">Public Discipline Log</p>
+      <h1>The Olipop Six Pack Challenge</h1>
+      <p class="subtitle">
+        I am replacing traditional soda with Olipop while documenting the journey toward a visible six pack. This is not a shortcut. This is a discipline experiment.
+      </p>
+      <div class="hero-buttons">
+        <a href="#new-entry" class="btn">Write Today’s Entry</a>
+        <a href="#entries" class="btn secondary">Read The Log</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="dashboard">
+    <section>
       <h2 class="section-title">Challenge Dashboard</h2>
       <div class="stats-grid">
         <div class="stat-card">
@@ -676,7 +275,7 @@
       </div>
     </section>
 
-    <section id="rules">
+    <section>
       <h2 class="section-title">Rules</h2>
       <div class="rules-card">
         <ul>
@@ -725,21 +324,7 @@
       <h2 class="section-title">Challenge Log</h2>
       <div id="postsContainer" class="posts"></div>
     </section>
-    <div class="bottom-banner">
-      <div>
-        <strong>A New Kind of Challenge</strong>
-        <p>Fitness, discipline, and soda replacement documented in public.</p>
-      </div>
-      <div>
-        <strong>Small Choices Compound</strong>
-        <p>Every entry is proof that the system is still alive.</p>
-      </div>
-      <div>
-        <strong>Future Six Pack</strong>
-        <p>The goal is simple: keep showing up until it happens.</p>
-      </div>
-    </div>
-  </main>
+    </main>
 
   <footer>
     <p>Built for discipline, consistency, and documentation.</p>
