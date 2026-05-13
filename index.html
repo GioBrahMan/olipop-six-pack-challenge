@@ -304,8 +304,17 @@
             <label for="photoInput">Daily Picture</label>
             <input id="photoInput" type="file" accept="image/*" />
           </div>
+          <div>
+            <label for="sugarInput">Added Sugar Today (g)</label>
+            <input id="sugarInput" type="number" placeholder="Example: 6" />
+          </div>
         </div>
 
+
+        <div style="margin-top: 1rem;">
+          <label for="bodyInput">Daily Entry</label>
+          <textarea id="bodyInput" placeholder="How did today go?"></textarea>
+        </div>
 
         <div class="form-actions">
           <button onclick="saveEntry()">Save Entry</button>
@@ -337,6 +346,7 @@
       const title = document.getElementById("titleInput").value.trim();
       const date = document.getElementById("dateInput").value;
       const flavor = document.getElementById("flavorInput").value.trim();
+      const sugar = document.getElementById("sugarInput").value;
       const body = document.getElementById("bodyInput").value.trim();
       const photoFile = document.getElementById("photoInput").files[0];
 
@@ -349,21 +359,22 @@
         const reader = new FileReader();
 
         reader.onload = function(event) {
-          createEntry(title, date, flavor, body, event.target.result);
+          createEntry(title, date, flavor, sugar, body, event.target.result);
         };
 
         reader.readAsDataURL(photoFile);
       } else {
-        createEntry(title, date, flavor, body, "");
+        createEntry(title, date, flavor, sugar, body, "");
       }
     }
 
-    function createEntry(title, date, flavor, body, photo) {
+    function createEntry(title, date, flavor, sugar, body, photo) {
       const entry = {
         id: Date.now(),
         title,
         date,
         flavor,
+        sugar,
         body,
         photo
       };
@@ -402,6 +413,7 @@
           <p>${entry.body}</p>
           <div class="post-tags">
             ${entry.flavor ? `<span class="tag">Flavor: ${entry.flavor}</span>` : ""}
+            ${entry.sugar ? `<span class="tag">Added Sugar: ${entry.sugar}g</span>` : ""}
           </div>
         `;
 
