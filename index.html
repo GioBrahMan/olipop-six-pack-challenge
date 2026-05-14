@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Olipop Six Pack Challenge</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -53,28 +54,6 @@
       margin: 0 auto 2rem;
     }
 
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      text-decoration: none;
-      padding: 0.9rem 1.3rem;
-      border-radius: 999px;
-      font-weight: 700;
-      border: 1px solid #b6ff8a;
-      color: #0f1115;
-      background: #b6ff8a;
-    }
-
-    .btn.secondary {
-      background: transparent;
-      color: #b6ff8a;
-    }
-
     main {
       width: min(1100px, 92%);
       margin: 0 auto;
@@ -96,7 +75,10 @@
       gap: 1rem;
     }
 
-    .stat-card, .post-card, .rules-card, .form-card {
+    .stat-card,
+    .post-card,
+    .rules-card,
+    .form-card {
       background: #171a21;
       border: 1px solid #2b303b;
       border-radius: 22px;
@@ -138,7 +120,8 @@
       margin-bottom: 0.35rem;
     }
 
-    input, textarea, select {
+    input,
+    textarea {
       width: 100%;
       padding: 0.85rem;
       border-radius: 14px;
@@ -149,8 +132,9 @@
     }
 
     textarea {
-      min-height: 150px;
+      min-height: 180px;
       resize: vertical;
+      margin-top: 1rem;
     }
 
     .form-actions {
@@ -168,11 +152,6 @@
       background: #b6ff8a;
       color: #0f1115;
       font-weight: 800;
-    }
-
-    button.danger {
-      background: #ff6b6b;
-      color: white;
     }
 
     .posts {
@@ -226,144 +205,232 @@
       header {
         min-height: 60vh;
       }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <div class="hero">
       <p class="eyebrow">Public Discipline Log</p>
+
       <h1>The Olipop Six Pack Challenge</h1>
+
       <p class="subtitle">
-        I am replacing traditional soda with Olipop while documenting the journey toward a visible six pack. This is not a shortcut. This is a discipline experiment.
+        I am replacing traditional soda with Olipop while documenting the journey toward a visible six pack.
+        This is not a shortcut. This is a discipline experiment.
       </p>
     </div>
   </header>
 
   <main>
+
     <section>
       <h2 class="section-title">Challenge Dashboard</h2>
+
       <div class="stats-grid">
+
         <div class="stat-card">
           <span>Challenge Status</span>
           <strong>Active</strong>
         </div>
+
         <div class="stat-card">
           <span>Only Soda Allowed</span>
           <strong>Olipop</strong>
         </div>
+
         <div class="stat-card">
           <span>Goal</span>
           <strong>Six Pack</strong>
         </div>
+
         <div class="stat-card">
           <span>Start Date</span>
           <strong id="startDateText">Set Below</strong>
         </div>
+
       </div>
     </section>
 
     <section>
       <h2 class="section-title">Rules</h2>
+
       <div class="rules-card">
         <ul>
           <li>No regular soda during the challenge.</li>
-          <li>If I drink “soda,” it has to be Olipop.</li>
-          <li>Getting a six pack will require training, nutrition, sleep, and consistency, not just soda replacement.</li>
-          <li>The challenge ends when a visible six pack is achieved and documented.</li>
-          <li>The goal is to obtain a six pack by August 31, 2026.</li>
+          <li>If I drink soda, it must be Olipop.</li>
+          <li>Training, nutrition, sleep, and consistency are required.</li>
+          <li>The challenge ends once a visible six pack is achieved.</li>
+          <li>Goal deadline: August 31, 2026.</li>
         </ul>
       </div>
     </section>
 
     <section id="new-entry">
+
       <h2 class="section-title">New Blog Entry</h2>
+
       <div class="form-card">
+
         <div class="form-grid">
+
           <div>
             <label for="titleInput">Entry Title</label>
-            <input id="titleInput" type="text" placeholder="Day 1 — Officially Starting" />
+            <input
+              id="titleInput"
+              type="text"
+              placeholder="Day 1 — Officially Starting"
+            />
           </div>
+
           <div>
             <label for="dateInput">Date</label>
             <input id="dateInput" type="date" />
           </div>
+
           <div>
             <label for="flavorInput">Olipop Flavor</label>
-            <input id="flavorInput" type="text" placeholder="Example: Cream Soda" />
+            <input
+              id="flavorInput"
+              type="text"
+              placeholder="Example: Cream Soda"
+            />
           </div>
+
           <div>
             <label for="photoInput">Daily Picture</label>
-            <input id="photoInput" type="file" accept="image/*" />
+            <input
+              id="photoInput"
+              type="file"
+              accept="image/*"
+            />
           </div>
+
           <div>
             <label for="sugarInput">Added Sugar Today (g)</label>
-            <input id="sugarInput" type="number" placeholder="Example: 6" />
+            <input
+              id="sugarInput"
+              type="number"
+              placeholder="Example: 6"
+            />
           </div>
+
         </div>
 
+        <div>
+          <label for="bodyInput">Daily Entry</label>
+
+          <textarea
+            id="bodyInput"
+            placeholder="Write today's challenge update..."
+          ></textarea>
+        </div>
 
         <div class="form-actions">
           <button onclick="saveEntry()">Save Entry</button>
         </div>
+
       </div>
+
     </section>
 
     <section id="entries">
+
       <h2 class="section-title">Challenge Log</h2>
+
       <div id="postsContainer" class="posts"></div>
+
     </section>
-    </main>
+
+  </main>
 
   <footer>
     <p>Built for discipline, consistency, and documentation.</p>
   </footer>
 
   <script>
+
     const postsContainer = document.getElementById("postsContainer");
     const dateInput = document.getElementById("dateInput");
     const startDateText = document.getElementById("startDateText");
 
     const today = new Date();
+
     dateInput.value = today.toISOString().split("T")[0];
 
-    let entries = JSON.parse(localStorage.getItem("olipopChallengeEntries")) || [];
+    let entries =
+      JSON.parse(localStorage.getItem("olipopChallengeEntries")) || [];
 
     function saveEntry() {
-      const title = document.getElementById("titleInput").value.trim();
-      const date = document.getElementById("dateInput").value;
-      const flavor = document.getElementById("flavorInput").value.trim();
-      const sugar = document.getElementById("sugarInput").value;
-      const body = document.getElementById("bodyInput").value.trim();
-      const photoFile = document.getElementById("photoInput").files[0];
+
+      const title =
+        document.getElementById("titleInput").value.trim();
+
+      const date =
+        document.getElementById("dateInput").value;
+
+      const flavor =
+        document.getElementById("flavorInput").value.trim();
+
+      const sugar =
+        document.getElementById("sugarInput").value;
+
+      const body =
+        document.getElementById("bodyInput").value.trim();
+
+      const photoFile =
+        document.getElementById("photoInput").files[0];
 
       if (!title || !date || !body) {
-        alert("Please add at least a title, date, and entry before saving.");
+        alert("Please add a title, date, and entry.");
         return;
       }
 
       if (photoFile) {
+
         const reader = new FileReader();
 
         reader.onload = function(event) {
-          createEntry(title, date, flavor, sugar, body, event.target.result);
+
+          createEntry(
+            title,
+            date,
+            flavor,
+            sugar,
+            body,
+            event.target.result
+          );
+
         };
 
         reader.readAsDataURL(photoFile);
+
       } else {
-        createEntry(title, date, flavor, sugar, body, "");
+
+        createEntry(
+          title,
+          date,
+          flavor,
+          sugar,
+          body,
+          ""
+        );
+
       }
+
     }
 
-    function createEntry(title, date, flavor, sugar, body, photo) {
+    function createEntry(
+      title,
+      date,
+      flavor,
+      sugar,
+      body,
+      photo
+    ) {
+
       const entry = {
         id: Date.now(),
         title,
@@ -375,75 +442,125 @@
       };
 
       entries.unshift(entry);
-      localStorage.setItem("olipopChallengeEntries", JSON.stringify(entries));
+
+      localStorage.setItem(
+        "olipopChallengeEntries",
+        JSON.stringify(entries)
+      );
+
       resetForm();
+
       renderEntries();
+
     }
 
     function renderEntries() {
+
       postsContainer.innerHTML = "";
 
       if (entries.length === 0) {
+
         postsContainer.innerHTML = `
           <div class="post-card">
             <h3>No entries yet.</h3>
-            <p class="post-meta">Start with Day 1 and document the challenge from the beginning.</p>
+            <p class="post-meta">
+              Start documenting your challenge journey.
+            </p>
           </div>
         `;
+
         startDateText.textContent = "Set Below";
+
         return;
+
       }
 
-      const oldestEntry = entries[entries.length - 1];
-      startDateText.textContent = formatDate(oldestEntry.date);
+      const oldestEntry =
+        entries[entries.length - 1];
+
+      startDateText.textContent =
+        formatDate(oldestEntry.date);
 
       entries.forEach(entry => {
+
         const card = document.createElement("article");
+
         card.className = "post-card";
 
         card.innerHTML = `
-          ${entry.photo ? `<img class="entry-photo" src="${entry.photo}" alt="${entry.title}">` : ""}
+          ${
+            entry.photo
+              ? `<img class="entry-photo" src="${entry.photo}" alt="${entry.title}">`
+              : ""
+          }
+
           <h3>${entry.title}</h3>
-          <p class="post-meta">${formatDate(entry.date)}</p>
+
+          <p class="post-meta">
+            ${formatDate(entry.date)}
+          </p>
+
           <p>${entry.body}</p>
+
           <div class="post-tags">
-            ${entry.flavor ? `<span class="tag">Flavor: ${entry.flavor}</span>` : ""}
-            ${entry.sugar ? `<span class="tag">Added Sugar: ${entry.sugar}g</span>` : ""}
+
+            ${
+              entry.flavor
+                ? `<span class="tag">Flavor: ${entry.flavor}</span>`
+                : ""
+            }
+
+            ${
+              entry.sugar
+                ? `<span class="tag">Added Sugar: ${entry.sugar}g</span>`
+                : ""
+            }
+
           </div>
         `;
 
         postsContainer.appendChild(card);
+
       });
+
     }
 
     function resetForm() {
+
       document.getElementById("titleInput").value = "";
+
       document.getElementById("flavorInput").value = "";
+
       document.getElementById("photoInput").value = "";
+
+      document.getElementById("sugarInput").value = "";
+
       document.getElementById("bodyInput").value = "";
-      dateInput.value = new Date().toISOString().split("T")[0];
-    }
 
-    function clearEntries() {
-      const confirmClear = confirm("Are you sure you want to delete all saved blog entries from this browser?");
+      dateInput.value =
+        new Date().toISOString().split("T")[0];
 
-      if (!confirmClear) return;
-
-      entries = [];
-      localStorage.removeItem("olipopChallengeEntries");
-      renderEntries();
     }
 
     function formatDate(dateString) {
-      const date = new Date(dateString + "T00:00:00");
-      return date.toLocaleDateString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric"
-      });
+
+      const date =
+        new Date(dateString + "T00:00:00");
+
+      return date.toLocaleDateString(
+        "en-US",
+        {
+          month: "long",
+          day: "numeric",
+          year: "numeric"
+        }
+      );
+
     }
 
     renderEntries();
+
   </script>
+
 </body>
 </html>
