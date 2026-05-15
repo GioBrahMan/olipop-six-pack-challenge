@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Olipop Six Pack Challenge</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -26,7 +28,13 @@
       justify-content: center;
       text-align: center;
       padding: 3rem 1.2rem;
-      background: radial-gradient(circle at top, #263826, #0f1115 65%);
+
+      background:
+        radial-gradient(
+          circle at top,
+          #263826,
+          #0f1115 65%
+        );
     }
 
     .hero {
@@ -71,19 +79,30 @@
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(180px, 1fr)
+        );
+
       gap: 1rem;
     }
 
     .stat-card,
     .post-card,
-    .rules-card,
-    .form-card {
+    .rules-card {
+
       background: #171a21;
-      border: 1px solid #2b303b;
+
+      border:
+        1px solid #2b303b;
+
       border-radius: 22px;
+
       padding: 1.2rem;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+
+      box-shadow:
+        0 16px 40px rgba(0,0,0,0.25);
     }
 
     .stat-card span {
@@ -104,54 +123,6 @@
 
     .rules-card li {
       margin-bottom: 0.5rem;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    label {
-      display: block;
-      color: #c9c9c9;
-      font-size: 0.9rem;
-      margin-bottom: 0.35rem;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.85rem;
-      border-radius: 14px;
-      border: 1px solid #343946;
-      background: #101218;
-      color: #f5f5f5;
-      font: inherit;
-    }
-
-    textarea {
-      min-height: 180px;
-      resize: vertical;
-      margin-top: 1rem;
-    }
-
-    .form-actions {
-      display: flex;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-
-    button {
-      border: none;
-      cursor: pointer;
-      padding: 0.85rem 1.1rem;
-      border-radius: 999px;
-      background: #b6ff8a;
-      color: #0f1115;
-      font-weight: 800;
     }
 
     .posts {
@@ -179,10 +150,16 @@
 
     .tag {
       font-size: 0.8rem;
+
       color: #b6ff8a;
-      border: 1px solid #365c28;
+
+      border:
+        1px solid #365c28;
+
       background: #162013;
+
       border-radius: 999px;
+
       padding: 0.3rem 0.65rem;
     }
 
@@ -190,8 +167,12 @@
       width: 100%;
       max-height: 520px;
       object-fit: cover;
+
       border-radius: 18px;
-      border: 1px solid #2b303b;
+
+      border:
+        1px solid #2b303b;
+
       margin-bottom: 1rem;
     }
 
@@ -202,32 +183,47 @@
     }
 
     @media (max-width: 700px) {
+
       header {
         min-height: 60vh;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
   <header>
-    <div class="hero">
-      <p class="eyebrow">Public Discipline Log</p>
 
-      <h1>The Olipop Six Pack Challenge</h1>
+    <div class="hero">
+
+      <p class="eyebrow">
+        Public Discipline Log
+      </p>
+
+      <h1>
+        The Olipop Six Pack Challenge
+      </h1>
 
       <p class="subtitle">
         I am replacing traditional soda with Olipop while documenting the journey toward a visible six pack.
-        This is not a shortcut. This is a discipline experiment.
+        This is not a shortcut.
+        This is a discipline experiment.
       </p>
+
     </div>
+
   </header>
 
   <main>
 
     <section>
-      <h2 class="section-title">Challenge Dashboard</h2>
+
+      <h2 class="section-title">
+        Challenge Dashboard
+      </h2>
 
       <div class="stats-grid">
 
@@ -248,89 +244,44 @@
 
         <div class="stat-card">
           <span>Start Date</span>
-          <strong id="startDateText">Set Below</strong>
+          <strong>May 13, 2026</strong>
         </div>
 
       </div>
+
     </section>
 
     <section>
-      <h2 class="section-title">Rules</h2>
+
+      <h2 class="section-title">
+        Rules
+      </h2>
 
       <div class="rules-card">
+
         <ul>
-          <li>No regular soda during the challenge.</li>
-          <li>If I drink soda, it must be Olipop.</li>
-          <li>Training, nutrition, sleep, and consistency are required.</li>
-          <li>The challenge ends once a visible six pack is achieved.</li>
-          <li>Goal deadline: August 31, 2026.</li>
+
+          <li>
+            No regular soda during the challenge.
+          </li>
+
+          <li>
+            If I drink soda, it must be Olipop.
+          </li>
+
+          <li>
+            Training, nutrition, sleep, and consistency are required.
+          </li>
+
+          <li>
+            The challenge ends once a visible six pack is achieved.
+          </li>
+
+          <li>
+            Goal deadline: August 31, 2026.
+          </li>
+
         </ul>
-      </div>
-    </section>
-
-    <section id="new-entry">
-
-      <h2 class="section-title">New Blog Entry</h2>
-
-      <div class="form-card">
-
-        <div class="form-grid">
-
-          <div>
-            <label for="titleInput">Entry Title</label>
-            <input
-              id="titleInput"
-              type="text"
-              placeholder="Day 1 — Officially Starting"
-            />
-          </div>
-
-          <div>
-            <label for="dateInput">Date</label>
-            <input id="dateInput" type="date" />
-          </div>
-
-          <div>
-            <label for="flavorInput">Olipop Flavor</label>
-            <input
-              id="flavorInput"
-              type="text"
-              placeholder="Example: Cream Soda"
-            />
-          </div>
-
-          <div>
-            <label for="photoInput">Daily Picture</label>
-            <input
-              id="photoInput"
-              type="file"
-              accept="image/*"
-            />
-          </div>
-
-          <div>
-            <label for="sugarInput">Added Sugar Today (g)</label>
-            <input
-              id="sugarInput"
-              type="number"
-              placeholder="Example: 6"
-            />
-          </div>
-
-        </div>
-
-        <div>
-          <label for="bodyInput">Daily Entry</label>
-
-          <textarea
-            id="bodyInput"
-            placeholder="Write today's challenge update..."
-          ></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button onclick="saveEntry()">Save Entry</button>
-        </div>
 
       </div>
 
@@ -338,229 +289,63 @@
 
     <section id="entries">
 
-      <h2 class="section-title">Challenge Log</h2>
+      <h2 class="section-title">
+        Challenge Log
+      </h2>
 
-      <div id="postsContainer" class="posts"></div>
+      <div id="postsContainer" class="posts">
+
+        <!-- DAY 1 -->
+
+        <article class="post-card">
+
+          <!-- CHANGE THIS IMAGE PATH -->
+
+          <img
+            class="entry-photo"
+            src="day1.jpg"
+            alt="Day 1"
+          >
+
+          <h3>
+            Day 1
+          </h3>
+
+          <p class="post-meta">
+            May 13, 2026
+          </p>
+
+          <p>
+            Today was ok, I did eat 2 small bags of chips which was not necessary.
+          </p>
+
+          <div class="post-tags">
+
+            <span class="tag">
+              Flavor: Cream Soda
+            </span>
+
+            <span class="tag">
+              Added Sugar: 13g
+            </span>
+
+          </div>
+
+        </article>
+
+      </div>
 
     </section>
 
   </main>
 
   <footer>
-    <p>Built for discipline, consistency, and documentation.</p>
+
+    <p>
+      Built for discipline, consistency, and documentation.
+    </p>
+
   </footer>
-
-  <script>
-
-    const postsContainer = document.getElementById("postsContainer");
-    const dateInput = document.getElementById("dateInput");
-    const startDateText = document.getElementById("startDateText");
-
-    const today = new Date();
-
-    dateInput.value = today.toISOString().split("T")[0];
-
-    let entries =
-      JSON.parse(localStorage.getItem("olipopChallengeEntries")) || [];
-
-    function saveEntry() {
-
-      const title =
-        document.getElementById("titleInput").value.trim();
-
-      const date =
-        document.getElementById("dateInput").value;
-
-      const flavor =
-        document.getElementById("flavorInput").value.trim();
-
-      const sugar =
-        document.getElementById("sugarInput").value;
-
-      const body =
-        document.getElementById("bodyInput").value.trim();
-
-      const photoFile =
-        document.getElementById("photoInput").files[0];
-
-      if (!title || !date || !body) {
-        alert("Please add a title, date, and entry.");
-        return;
-      }
-
-      if (photoFile) {
-
-        const reader = new FileReader();
-
-        reader.onload = function(event) {
-
-          createEntry(
-            title,
-            date,
-            flavor,
-            sugar,
-            body,
-            event.target.result
-          );
-
-        };
-
-        reader.readAsDataURL(photoFile);
-
-      } else {
-
-        createEntry(
-          title,
-          date,
-          flavor,
-          sugar,
-          body,
-          ""
-        );
-
-      }
-
-    }
-
-    function createEntry(
-      title,
-      date,
-      flavor,
-      sugar,
-      body,
-      photo
-    ) {
-
-      const entry = {
-        id: Date.now(),
-        title,
-        date,
-        flavor,
-        sugar,
-        body,
-        photo
-      };
-
-      entries.unshift(entry);
-
-      localStorage.setItem(
-        "olipopChallengeEntries",
-        JSON.stringify(entries)
-      );
-
-      resetForm();
-
-      renderEntries();
-
-    }
-
-    function renderEntries() {
-
-      postsContainer.innerHTML = "";
-
-      if (entries.length === 0) {
-
-        postsContainer.innerHTML = `
-          <div class="post-card">
-            <h3>No entries yet.</h3>
-            <p class="post-meta">
-              Start documenting your challenge journey.
-            </p>
-          </div>
-        `;
-
-        startDateText.textContent = "Set Below";
-
-        return;
-
-      }
-
-      const oldestEntry =
-        entries[entries.length - 1];
-
-      startDateText.textContent =
-        formatDate(oldestEntry.date);
-
-      entries.forEach(entry => {
-
-        const card = document.createElement("article");
-
-        card.className = "post-card";
-
-        card.innerHTML = `
-          ${
-            entry.photo
-              ? `<img class="entry-photo" src="${entry.photo}" alt="${entry.title}">`
-              : ""
-          }
-
-          <h3>${entry.title}</h3>
-
-          <p class="post-meta">
-            ${formatDate(entry.date)}
-          </p>
-
-          <p>${entry.body}</p>
-
-          <div class="post-tags">
-
-            ${
-              entry.flavor
-                ? `<span class="tag">Flavor: ${entry.flavor}</span>`
-                : ""
-            }
-
-            ${
-              entry.sugar
-                ? `<span class="tag">Added Sugar: ${entry.sugar}g</span>`
-                : ""
-            }
-
-          </div>
-        `;
-
-        postsContainer.appendChild(card);
-
-      });
-
-    }
-
-    function resetForm() {
-
-      document.getElementById("titleInput").value = "";
-
-      document.getElementById("flavorInput").value = "";
-
-      document.getElementById("photoInput").value = "";
-
-      document.getElementById("sugarInput").value = "";
-
-      document.getElementById("bodyInput").value = "";
-
-      dateInput.value =
-        new Date().toISOString().split("T")[0];
-
-    }
-
-    function formatDate(dateString) {
-
-      const date =
-        new Date(dateString + "T00:00:00");
-
-      return date.toLocaleDateString(
-        "en-US",
-        {
-          month: "long",
-          day: "numeric",
-          year: "numeric"
-        }
-      );
-
-    }
-
-    renderEntries();
-
-  </script>
 
 </body>
 </html>
